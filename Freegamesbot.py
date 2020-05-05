@@ -24,7 +24,7 @@ async def ping(ctx):
 
 #help command
 @client.command()
-async def mehelp(ctx):
+async def helpme(ctx):
     await ctx.send("för att använda mig skriv in 'freegames'. Då kommer jag skicka en lista över de spel är gratis under de senaste sju dagarn. :)")
 
 #discord command
