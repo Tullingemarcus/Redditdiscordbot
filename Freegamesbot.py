@@ -22,6 +22,11 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("Pong!")
 
+#help command
+@client.command()
+async def helpme(ctx):
+    await ctx.send("för att använda mig skriv in 'freegames'. Då kommer jag skicka en lista över de spel som är gratis under de senaste sju dagarna. :)")
+
 #discord command
 @client.command()
 async def freegames(ctx):
