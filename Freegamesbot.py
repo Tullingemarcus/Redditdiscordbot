@@ -24,8 +24,8 @@ async def ping(ctx):
 
 #help command
 @client.command()
-async def helpme(ctx):
-    await ctx.send("för att använda mig skriv in 'freegames'. Då kommer jag skicka en lista över de spel som är gratis under de senaste sju dagarna. :)")
+async def mehelp(ctx):
+    await ctx.send("för att använda mig skriv in 'freegames'. Då kommer jag skicka en lista över de spel är gratis under de senaste sju dagarn. :)")
 
 #discord command
 @client.command()
@@ -38,7 +38,7 @@ async def freegames(ctx):
         if submission.link_flair_css_class == 'Expired':
             pass
         else:
-            await ctx.send(submission.url)
+            await ctx.send(submission.title + submission.url)
 
 #so that the code starts
 if __name__ == "__main__":
