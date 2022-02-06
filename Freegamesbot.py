@@ -3,13 +3,12 @@ import discord
 from discord.ext import commands
 
 #imports for commands and reddit
-import asyncio
 import praw
 
 #importing necessary variables from auth
 from auth import token, PASSWORD, secret, Id, name
 
-#for shorting down code and adding prefix
+#prefix for the commands
 client = commands.Bot(command_prefix = '¤')
 
 #event when you start the bot
