@@ -29,3 +29,7 @@ This command just checks if the bot have connection to the discord server
 Sends out a list of five games from the last seven days from the subreddit [```FreeGameFindings```](https://www.reddit.com/r/FreeGameFindings/)
 
 These commands can be changed and there is possibility to add commands in the code
+
+## Setup
+If this is your first discord bot follow this guide to complete the initial setup https://realpython.com/how-to-make-a-discord-bot-python/ <br>
+Otherwise all you need to do is compile and run the program
