@@ -1,4 +1,6 @@
+#This fileshould be renamed auth.py
 #Necessary that you will need to fill in
+
 #Your token for your discord bot can be found at https://discord.com/developers/applications
 #Under bot click copy token
 token = 'your_token'
