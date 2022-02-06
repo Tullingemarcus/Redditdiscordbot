@@ -6,8 +6,8 @@ from discord.ext import commands
 import asyncio
 import praw
 
-#token import
-from auth import token
+#importing necessary variables from auth
+from auth import token, PASSWORD, secret, Id, name
 
 #for shorting down code and adding prefix
 client = commands.Bot(command_prefix = '¤')
@@ -17,7 +17,7 @@ client = commands.Bot(command_prefix = '¤')
 async def on_ready():
     print("Bot is ready")
         
-#ping command
+#ping command to check if bot has connection to discord
 @client.command()
 async def ping(ctx):
     await ctx.send("Pong!")
@@ -30,16 +30,20 @@ async def helpme(ctx):
 #discord command
 @client.command()
 async def freegames(ctx):
-    reddit = praw.Reddit(client_id='3BqRqrMOaAKI9g',
-                     client_secret='qClRMeV9jFOaOUv7AKOLaolpLGE', password='D1sc0rd02',
-                     user_agent='discordreddit', username='discordbotonreddit')
-                     
+    #Personal variables is found under auth.py
+    #user_agent can be anything in this case i have named it "discordreddit"
+    reddit = praw.Reddit(client_id=Id,
+                     client_secret=secret, password=PASSWORD,
+                     user_agent='discordreddit', username=name)
+
+    #checking which timeframe should be checked and how many post in that timeframe should be checked
     for submission in reddit.subreddit('FreeGameFindings').top('week', limit=5):
+        #checking if the post have flair "expired" and ignoring if it have
         if submission.link_flair_css_class == 'Expired':
             pass
         else:
             await ctx.send(submission.title + submission.url)
 
-#so that the code starts
+#main function
 if __name__ == "__main__":
     client.run(token)
