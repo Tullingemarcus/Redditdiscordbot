@@ -1,4 +1,5 @@
 # Redditdiscordbot
+This is a small discord bot that uses reddits API for Python to view content from the subreddit r/FreeGameFindings
 ## Requirements
 **Required libraries**
 * PRAW
